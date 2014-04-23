@@ -1,7 +1,14 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The following two functions compute the inverse of a numeric matrix.
+## The inverse is cached on first computation, so that it can be looked up 
+## rather than recomputed later.
 
-## Write a short comment describing this function
+## makeCacheMatrix description:
+## Input: numeric matrix
+## Output: list of 4 functions to:
+##  set value of matrix
+##  get value of matrix
+##  set value of matrix inverse
+##  get value of matrix inverse
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
@@ -17,7 +24,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve Description:
+## Input: object created by makeCacheMatrix()
+## Output: Inverse of the matrix input to makeCacheMatrix()
+##
+## Inverse is computed if it is not already cached
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
